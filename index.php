@@ -8,12 +8,10 @@
  */
 ?>
 
-<h1>Äventyret</h1>
+<h1>Den perfecta Csgo rundan!</h1>
+
 
 <?php
-/** Kolla om query string parametern (GET parametern) är (==) tom (NULL)
- *	I fall att den är tom visas ett formulär som ber besökaren fylla i sitt namn
- */
 if ($_GET['player_name'] == NULL):
 ?>
 <form action="index.php">
@@ -23,50 +21,56 @@ if ($_GET['player_name'] == NULL):
 	<input type="submit" value="Skicka">
 </form>
 <?php
-/** Annars om GET parametern "page" är lika med 1
- *	Visas den första 'sidan' med beskrivning av omgivningen och 
- *	ett formulär för att komma vidare
- */
 elseif ($_GET['page'] == 1):
 ?>
 <h2>Tjena <? echo $_GET['player_name'] ?></h2>
 <p>Du står i spawn på de_dust2, terroristsidan. Berätta din bästa strategi.</p>
 <form action="index.php">
 	<label> Vilket håll skall du attackera ifrån?</label><br>
-	<input type="radio" name="page" value="2" id="west">
+	<input type="radio" name="page" value="2" id="long">
 	<label for="west">Nerför slope in vidare till lång för att överta A-site.</label><br>
-	<input type="radio" name="page" value="3" id="north">
+	<input type="radio" name="page" value="3" id="short">
 	<label for="north">Peaka mid för att gå short till A-site.</label><br>
-	<input type="radio" name="page" value="4" id="east">
+	<input type="radio" name="page" value="4" id="tunnel">
 	<label for="east">Du går åt vänster för att söka dig genom B-tunnel.</label><br>
 	<input type="hidden" name="player_name" value="<?= $_GET['player_name'] ?>">
 	<input type="submit" value="Skicka">
 </form>
 
 <?php
-/** Om "page" inte var 1, kollar vi om den kanske är 2
- *	I fall att detta stämmer visas den andra sidan
- */
 elseif ($_GET['page'] == 2):
 ?>
-<h2>Stugan</h2>
 <p>Du närmar dig Bombsite.</p>
 <img src="img/hut.jpg">
 <form action="index.php">
 	<label>Vad är din nästa move??</label><br>
-	<input type="radio" name="page" value="5" id="west">
-	<label for="west">Väst</label><br>
-	<input type="radio" name="page" value="6" id="north">
-	<label for="north">Norr</label><br>
-	<input type="radio" name="page" value="7" id="east">
-	<label for="east">Öster</label><br>
+	<input type="radio" name="page" value="5" id="rush">
+	<label for="west">Överraska dina motståndare genom att Rusha!</label><br>
+	<input type="radio" name="page" value="6" id="peaka">
+	<label for="north">Ta det lugnt och förlita dig på dina chanser att döda dina motståndare genom att peaka.</label><br>
+	<input type="radio" name="page" value="7" id="support">
+	<label for="east">Spelar passivt med smokes och flashes för att hjälpa dina medspelare att angripa bombsite.</label><br>
 	<input type="hidden" name="player_name" value="<?= $_GET['player_name'] ?>">
 	<input type="submit" value="Skicka">
 </form>
 
 <?php
-/** Här tar elseif -satserna slut. Eftersom vi inte använder tecknen {} för att
- *	visa php var våra kodblock börjar och slutar behövs ett endif
- */
+elseif ($_GET['page'] == 3):
+?>
+<p>Du har plantat bomben på bomsite, och dina motståndare har reroutat och är påväg mot dig.</p>
+<img src="img/hut.jpg">
+<form action="index.php">
+	<label>Hur positionerar du dig för att försvara bomben?</label><br>
+	<input type="radio" name="page" value="8" id="defrush">
+	<label for="west">Återigen spela aggresivt och rusha dem före de tar sig fram till bombsite.</label><br>
+	<input type="radio" name="page" value="9" id="strategic">
+	<label for="north">Göm dig bakom föremål för att strategiskt placera dig så att du hinner skjuta dem före de ser dig.</label><br>
+	<input type="radio" name="page" value="10" id="snipe">
+	<label for="east">Springer iväg och peakar. Då motståndarna kommer kastar du en eldbomb och tar fram ditt dundergevär och skjuter dem en och en från ett långt avstånd.</label><br>
+	<input type="hidden" name="player_name" value="<?= $_GET['player_name'] ?>">
+	<input type="submit" value="Skicka">
+</form>
+
+<?php
 endif
 ?>
