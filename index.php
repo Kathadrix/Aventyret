@@ -17,7 +17,7 @@
 if ($_GET['player_name'] == NULL):
 ?>
 <form action="index.php">
-	<label>Vad heter du?</label>
+	<label>Tjoo, vad är ditt alias?</label>
 	<input type="text" name="player_name">
 	<input type="hidden" name="page" value="1">
 	<input type="submit" value="Skicka">
@@ -29,16 +29,16 @@ if ($_GET['player_name'] == NULL):
  */
 elseif ($_GET['page'] == 1):
 ?>
-<h2>Hej <? echo $_GET['player_name'] ?></h2>
-<p>Du står i en skogsdunge. Till väster ser du en liten stuga med en rykande skorsten och österfrån rinner en liten flod. Norrut ser du bara träd.</p>
+<h2>Tjena <? echo $_GET['player_name'] ?></h2>
+<p>Du står i spawn på de_dust2, terroristsidan. Berätta din bästa strategi.</p>
 <form action="index.php">
-	<label>Åt vilket håll går du?</label><br>
+	<label> Vilket håll skall du attackera ifrån?</label><br>
 	<input type="radio" name="page" value="2" id="west">
-	<label for="west">Väster</label><br>
+	<label for="west">Nerför slope in vidare till lång för att överta A-site.</label><br>
 	<input type="radio" name="page" value="3" id="north">
-	<label for="north">Norr</label><br>
+	<label for="north">Peaka mid för att gå short till A-site.</label><br>
 	<input type="radio" name="page" value="4" id="east">
-	<label for="east">Öster</label><br>
+	<label for="east">Du går åt vänster för att söka dig genom B-tunnel.</label><br>
 	<input type="hidden" name="player_name" value="<?= $_GET['player_name'] ?>">
 	<input type="submit" value="Skicka">
 </form>
@@ -50,12 +50,12 @@ elseif ($_GET['page'] == 1):
 elseif ($_GET['page'] == 2):
 ?>
 <h2>Stugan</h2>
-<p>Det ser inte ut som att någon är hemma.</p>
+<p>Du närmar dig Bombsite.</p>
 <img src="img/hut.jpg">
 <form action="index.php">
-	<label>Åt vilket håll går du?</label><br>
+	<label>Vad är din nästa move??</label><br>
 	<input type="radio" name="page" value="5" id="west">
-	<label for="west">Väster</label><br>
+	<label for="west">Väst</label><br>
 	<input type="radio" name="page" value="6" id="north">
 	<label for="north">Norr</label><br>
 	<input type="radio" name="page" value="7" id="east">
