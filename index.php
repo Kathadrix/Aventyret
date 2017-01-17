@@ -24,9 +24,9 @@ if ($_GET['player_name'] == NULL):
 elseif ($_GET['page'] == 1):
 ?>
 <h2>Tjena <? echo $_GET['player_name'] ?></h2>
-<p>Du står i spawn på de_dust2, terroristsidan. Berätta din bästa strategi.</p>
+<p>Du står i spawn på de_dust2, terroristsidan. Försök vinna rundan utan att bli likviderad!</p>
 <form action="index.php">
-	<label> Vilket håll skall du attackera ifrån?</label><br>
+	<label> Vilket håll går du för att attackera?</label><br>
 	<input type="radio" name="page" value="2" id="long">
 	<label for="west">Nerför slope in vidare till lång för att överta A-site.</label><br>
 	<input type="radio" name="page" value="3" id="short">
@@ -41,7 +41,6 @@ elseif ($_GET['page'] == 1):
 elseif ($_GET['page'] == 2):
 ?>
 <p>Du närmar dig Bombsite.</p>
-<img src="img/hut.jpg">
 <form action="index.php">
 	<label>Vad är din nästa move??</label><br>
 	<input type="radio" name="page" value="5" id="rush">
@@ -55,10 +54,9 @@ elseif ($_GET['page'] == 2):
 </form>
 
 <?php
-elseif ($_GET['page'] == 3):
+elseif ($_GET['page'] == 7):
 ?>
 <p>Du har plantat bomben på bomsite, och dina motståndare har reroutat och är påväg mot dig.</p>
-<img src="img/hut.jpg">
 <form action="index.php">
 	<label>Hur positionerar du dig för att försvara bomben?</label><br>
 	<input type="radio" name="page" value="8" id="defrush">
@@ -70,6 +68,12 @@ elseif ($_GET['page'] == 3):
 	<input type="hidden" name="player_name" value="<?= $_GET['player_name'] ?>">
 	<input type="submit" value="Skicka">
 </form>
+
+<?php
+elseif ($_GET['page'] == 10):
+?>
+
+<p>Du vann!</p>
 
 <?php
 endif
