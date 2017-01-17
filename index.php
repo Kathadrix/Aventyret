@@ -73,7 +73,80 @@ elseif ($_GET['page'] == 7):
 elseif ($_GET['page'] == 10):
 ?>
 
-<p>Du vann!</p>
+<h1>Bra jobbat! Bomben exploderade och du vann rundan!<h1>
+
+<?php
+elseif ($_GET['page'] == 3):
+?>
+<img src="de_dust.jpg">
+<form action="index.php">
+	<label>Påbörja på nytt?</label>
+	<input type="radio" name="page" value="1" id="starta_om">
+	<label for="starta_om">Starta om!</label>
+	<input type="hidden" name="player_name" value="<?= $_GET['player_name'] ?>">
+	<input type="submit" value="Skicka">
+</form>
+
+<?php
+elseif ($_GET['page'] == 4):
+?>
+<img src="de_dust.jpg">
+<form action="index.php">
+	<label>Påbörja på nytt?</label>
+	<input type="radio" name="page" value="1" id="starta_om">
+	<label for="starta_om">Starta om!</label>
+	<input type="hidden" name="player_name" value="<?= $_GET['player_name'] ?>">
+	<input type="submit" value="Skicka">
+</form>
+
+<?php
+elseif ($_GET['page'] == 5):
+?>
+<img src="de_dust.jpg">
+<form action="index.php">
+	<label>Påbörja på nytt?</label>
+	<input type="radio" name="page" value="1" id="starta_om">
+	<label for="starta_om">Starta om!</label>
+	<input type="hidden" name="player_name" value="<?= $_GET['player_name'] ?>">
+	<input type="submit" value="Skicka">
+</form>
+
+<?php
+elseif ($_GET['page'] == 6):
+?>
+<img src="de_dust.jpg">
+<form action="index.php">
+	<label>Påbörja på nytt?</label>
+	<input type="radio" name="page" value="1" id="starta_om">
+	<label for="starta_om">Starta om!</label>
+	<input type="hidden" name="player_name" value="<?= $_GET['player_name'] ?>">
+	<input type="submit" value="Skicka">
+</form>
+
+<?php
+elseif ($_GET['page'] == 8):
+?>
+<img src="de_dust.jpg">
+<form action="index.php">
+	<label>Påbörja på nytt?</label>
+	<input type="radio" name="page" value="1" id="starta_om">
+	<label for="starta_om">Starta om!</label>
+	<input type="hidden" name="player_name" value="<?= $_GET['player_name'] ?>">
+	<input type="submit" value="Skicka">
+</form>
+
+<?php
+elseif ($_GET['page'] == 9):
+?>
+<img src="de_dust.jpg">
+<form action="index.php">
+	<label>Påbörja på nytt?</label>
+	<input type="radio" name="page" value="1" id="starta_om">
+	<label for="starta_om">Starta om!</label>
+	<input type="hidden" name="player_name" value="<?= $_GET['player_name'] ?>">
+	<input type="submit" value="Skicka">
+</form>
+
 
 <?php
 endif
